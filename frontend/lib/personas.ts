@@ -11,8 +11,8 @@ export const personas: Persona[] = [
     initials: "HC",
     avatar: "/hitesh_choudhary_profile.jpg",
     gradient: "from-orange-500 to-amber-600",
-    headerColor: "#075e54",
-    userBubbleColor: "#059669",
+    headerColor: "#ea580c",
+    userBubbleColor: "#f97316",
     expertise: [
       "JavaScript",
       "TypeScript",
