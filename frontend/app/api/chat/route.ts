@@ -22,9 +22,14 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    const authHeader = request.headers.get("authorization");
+
     const response = await fetch(`${BACKEND_URL}/api/chat`, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        ...(authHeader ? { Authorization: authHeader } : {}),
+      },
       body: JSON.stringify({
         persona: body.persona,
         userMessage: body.userMessage.trim(),

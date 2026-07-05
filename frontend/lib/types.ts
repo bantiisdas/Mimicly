@@ -32,3 +32,13 @@ export interface ChatResponse {
   reply?: string;
   error?: string;
 }
+
+export interface AuthUser {
+  username: string;
+}
+
+export interface AuthResponse {
+  token?: string;
+  user?: AuthUser;
+  error?: string;
+}

@@ -1,5 +1,6 @@
 import { personas } from "@/lib/personas";
 import PersonaCard from "@/components/PersonaCard";
+import UserMenu from "@/components/UserMenu";
 
 export default function Home() {
   return (
@@ -19,6 +20,8 @@ export default function Home() {
               </p>
             </div>
           </div>
+
+          <UserMenu />
         </div>
       </header>
 

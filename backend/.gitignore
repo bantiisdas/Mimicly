@@ -13,3 +13,6 @@ npm-debug.log*
 # OS files
 .DS_Store
 Thumbs.db
+
+# Local user store (contains hashed credentials)
+data/users.json

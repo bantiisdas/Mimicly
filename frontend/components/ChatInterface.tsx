@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import type { Message, Persona } from "@/lib/types";
+import { useAuth } from "@/context/AuthContext";
 import MessageBubble from "./MessageBubble";
 import Avatar from "./Avatar";
 
@@ -23,6 +24,7 @@ function createMessage(
 }
 
 export default function ChatInterface({ persona }: ChatInterfaceProps) {
+  const { user, token, logout } = useAuth();
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -50,7 +52,10 @@ export default function ChatInterface({ persona }: ChatInterfaceProps) {
     try {
       const response = await fetch("/api/chat", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          ...(token ? { Authorization: `Bearer ${token}` } : {}),
+        },
         body: JSON.stringify({
           persona: persona.id,
           userMessage: trimmed,
@@ -123,9 +128,25 @@ export default function ChatInterface({ persona }: ChatInterfaceProps) {
 
         <div className="min-w-0 flex-1">
           <h1 className="truncate font-semibold">{persona.displayName}</h1>
-          <p className="truncate text-xs text-emerald-100">
+          <p className="truncate text-xs text-white/80">
             {isLoading ? "typing..." : persona.category}
           </p>
+        </div>
+
+        <div className="flex items-center gap-2">
+          {user && (
+            <span className="hidden truncate text-xs text-white/80 sm:inline">
+              @{user.username}
+            </span>
+          )}
+          <button
+            type="button"
+            onClick={logout}
+            className="rounded-lg px-2.5 py-1.5 text-xs font-medium transition-colors hover:bg-white/10"
+            aria-label="Log out"
+          >
+            Logout
+          </button>
         </div>
       </header>
 
