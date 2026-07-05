@@ -19,7 +19,7 @@ export async function chat(persona, userMessage) {
     persona === "hitesh_choudhary" ? HC_Conversations : PG_Conversation;
 
   const response = await client.chat.completions.create({
-    model: "gpt-5",
+    model: "gpt-4o",
     messages: [
       {
         role: "system",
