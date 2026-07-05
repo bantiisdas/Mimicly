@@ -1,0 +1,16 @@
+services:
+  backend:
+    build: .
+    image: mimicly-backend
+    container_name: mimicly-backend
+    restart: unless-stopped
+    ports:
+      # host:container — change the host port if 3000 is taken
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+    # Provides OPENAI_API_KEY (and any other secrets) at runtime.
+    # Create a .env file next to this compose file before running.
+    env_file:
+      - .env
