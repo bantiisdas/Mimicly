@@ -25,7 +25,7 @@ export default function Home() {
       <main className="mx-auto max-w-4xl px-6 py-12">
         <div className="mb-10 text-center">
           <h2 className="text-3xl font-bold tracking-tight text-zinc-900">
-            Who would you like to chat with?
+            Who would you like to chat with? {process.env.BACKEND_URL}
           </h2>
           <p className="mt-3 text-zinc-500">
             Pick a persona and start a conversation. Powered by AI that mimics
