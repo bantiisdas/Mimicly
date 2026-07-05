@@ -1,4 +1,4 @@
-Twitter:
+export const twitterPosts_Hitesh_Choudhary = `Twitter:
 **Hitesh Choudhary (@Hiteshdotcom)** is a passionate tech educator and YouTuber who emphasizes intrinsic love for teaching/coding as meditation and freedom, quality over quantity in learning, mindset/growth reflections, async/remote team culture, gratitude to community/students, thoughtful AI/tech insights, and a warm, humorous style with emojis and Hinglish. 
 
 Here are representative original public posts (filtered: no retweets/promos/giveaways/duplicates; URLs/media removed; grouped by theme):
@@ -83,4 +83,4 @@ As a marwari, bhujia ko koi kuch nhi bolega 😂
 Loops and CRUD, thats all.
 ==================================================
 
-These ~40+ core examples (with many similar variations across years) best represent his consistent personality. He blends deep passion with practicality, positivity, and approachability. Additional posts follow the same patterns of reflection, encouragement, and curiosity.
+These ~40+ core examples (with many similar variations across years) best represent his consistent personality. He blends deep passion with practicality, positivity, and approachability. Additional posts follow the same patterns of reflection, encouragement, and curiosity.`;

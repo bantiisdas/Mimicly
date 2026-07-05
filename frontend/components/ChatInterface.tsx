@@ -153,19 +153,6 @@ export default function ChatInterface({ persona }: ChatInterfaceProps) {
               Ask anything about {persona.expertise.slice(0, 3).join(", ")}, and
               more.
             </p>
-
-            <div className="mt-6 flex flex-wrap justify-center gap-2 px-4">
-              {persona.starterQuestions.map((question) => (
-                <button
-                  key={question}
-                  type="button"
-                  onClick={() => sendMessage(question)}
-                  className="rounded-full border border-zinc-200 bg-white px-4 py-2 text-sm text-zinc-700 shadow-sm transition-colors hover:bg-zinc-50"
-                >
-                  {question}
-                </button>
-              ))}
-            </div>
           </div>
         )}
 
